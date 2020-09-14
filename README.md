@@ -18,6 +18,7 @@ The best procedure to follow for accurate results are:
 4.  Supercruise to your first NSP site and once you drop into realspace use the composition scanner to scan each unique object (once per type) at the site (there are normally 3 types).
 5.  Repeats step 4 with any other NSP sites in the system
 6.  As you follow these steps BananaLog will be copying updated data to your clipboard to paste into a blank cell on the expeditions Spreadsheet (currently formated for the "Form Responses 6" tab) once you have finished scanning all unique NSP objects in the system.
+7.  Add any missing info into the spreadsheet (lagrange clouds for example cant be scanned).
 
 ## Buttons:
 There are two buttons in the EDMC interface for BananaLog
