@@ -7,11 +7,7 @@ It uses EDMC to read the Elite Dangerous Player Journal to detect when a command
 ###### There are many limitations to the data Elite Dangerous provides in the logs for NSP so BananaLog may produce errors in the data it provides.
 
 ## Installation & Uninstall:
-Please download the plugin from the [latest release](https://github.com/SciberWolf/BananaLog/releases/latest) section on this page and then refer to the [Plugin Installation wiki](https://github.com/EDCD/EDMarketConnector/wiki/Plugins) on EDMCs page.
-
-This site was built using [GitHub Pages](https://pages.github.com/).
-
-
+Please download the plugin from the [latest release](https://github.com/SciberWolf/BananaLog/releases/latest) section on this page and then refer to the [Plugin Installation wiki](https://github.com/EDCD/EDMarketConnector/wiki/Plugins) on EDMCs own page to install into EDMC.
 
 ## Usage:
 Once installed BananaLog will start to read the player log entries to try and determine NSP details for the system you are currently in.
