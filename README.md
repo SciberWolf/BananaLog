@@ -35,6 +35,6 @@ If there is missing data for a system you have scanned try clicking the "Curr Sy
 ###### Issues:
 If you have any issues you can report them here or contact me on the expeditions Discord server. 
 
-
-
+###### Acknowledgments:
+Uses ([Pyperclip](https://github.com/asweigart/pyperclip) by Al Sweigart
 
