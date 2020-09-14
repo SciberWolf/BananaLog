@@ -1,13 +1,17 @@
 # BananaLog
 
-A Simple Elite: Dangerous Market Connector ([EDMC](https://github.com/EDCD/EDMarketConnector) plugin for the Banana Nebula Expedition.
+A Simple Elite: Dangerous Market Connector [EDMC](https://github.com/EDCD/EDMarketConnector) plugin for the Banana Nebula Expedition.
 It uses EDMC to read the Elite Dangerous Player Journal to detect when a commander uses the FSS to discover an NSP sites and the composition scanner to scan NSP objects such as Ice Crystals and then creates a string suitable for pasting into the expeditions discovery spread sheet.
 
 ###### This is a work in progress, expect bugs and use at you own risk.
 ###### There are many limitations to the data Elite Dangerous provides in the logs for NSP so BananaLog may produce errors in the data it provides.
 
 ## Installation & Uninstall:
-Please download the plugin from this site and then refer to the ([Plugin Installation wiki](https://github.com/EDCD/EDMarketConnector/wiki/Plugins) on EDMCs page.
+Please download the plugin from the [latest release](https://github.com/SciberWolf/BananaLog/releases/latest) section on this page and then refer to the [Plugin Installation wiki](https://github.com/EDCD/EDMarketConnector/wiki/Plugins) on EDMCs page.
+
+This site was built using [GitHub Pages](https://pages.github.com/).
+
+
 
 ## Usage:
 Once installed BananaLog will start to read the player log entries to try and determine NSP details for the system you are currently in.
@@ -36,5 +40,5 @@ If there is missing data for a system you have scanned try clicking the "Curr Sy
 If you have any issues you can report them here or contact me on the expeditions Discord server. 
 
 ###### Acknowledgments:
-Uses ([Pyperclip](https://github.com/asweigart/pyperclip) by Al Sweigart
+Uses [Pyperclip](https://github.com/asweigart/pyperclip) by Al Sweigart
 
