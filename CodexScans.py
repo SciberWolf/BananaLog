@@ -109,10 +109,11 @@ class CodexScans():
         UTCTime = self.Local2UTC(LocalTime)
 
         # TODO add correct Timestamp
-        returnstring = '{timestamp}{t}{cmdr}{t}{sector}{t}{system}{t}{nspnum}{t}{yes}{t}{blank}{t}{blank}{t}{nsp1}{t}{yes}{t}{blank}{t}{blank}{t}{nsp2}{t}{yes}{t}{blank}{t}{blank}{t}{nsp3}{t}'.format(
+        returnstring = '{timestamp}{t}{cmdr}{t}{sector}{t}{system}{t}{nspnum}{t}{yes}{t}{blank}{t}{blank}{t}{nsp1}{t}{yes}{t}{blank}{t}{blank}{t}{nsp2}{t}{yes}{t}{blank}{t}{blank}{t}{nsp3}{t}{dot}'.format(
             t = '\t',
             yes = 'Yes',
             blank = '',
+            dot = ".",
             timestamp = UTCTime.strftime("%m/%d/%Y %H:%M:%S"), #Create UTC (games timezone) datetimestamp
             cmdr = self.cmdr,
             sector = self.starsystem.split()[0],
