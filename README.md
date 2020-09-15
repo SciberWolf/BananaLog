@@ -21,9 +21,10 @@ The best procedure to follow for accurate results are:
 7.  Add any missing info into the spreadsheet (lagrange clouds for example cant be scanned).
 
 ## Buttons:
-There are two buttons in the EDMC interface for BananaLog
-Curr System: This button will regenerate the current system data and copy it to your clipboard.
-Prev System: This will copy the last systems data to your clipboard if available. Note: After the next jump this will be cleared.
+There are three buttons in the EDMC interface for BananaLog
+1. Curr System:    This button will regenerate the current system data and copy it to your clipboard.
+2. Prev System:    This will copy the last systems data to your clipboard if available. Note: After the next jump this will be cleared.
+3. Show/hide log:  This will display a log of scans and actions, this can be handy to make sure Banalog detected a scan or if you wish to enter a discovery manually in the official form.
 
 ## Tips:
 * Keep some notes of your discoveries in case BananaLog fails to record data correctly.
@@ -38,4 +39,3 @@ If you have any issues you can report them here or contact me on the expeditions
 
 ### Acknowledgments:
 Uses [Pyperclip](https://github.com/asweigart/pyperclip) by Al Sweigart
-
