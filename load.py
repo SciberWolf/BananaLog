@@ -83,10 +83,15 @@ def update(method):
         else:
             this.win1 = tk.Toplevel()
             this.win1.title('BananaLog Log')
-            this.lb1 = tk.Listbox(win1, height = 60, width = 40)
-            this.lb1.pack()
+            this.lb1 = tk.Listbox(win1, height = 40, width = 50)
+            this.lb1.pack(side = tk.LEFT, fill = tk.BOTH)
             for x in this.windowlog:
                 this.lb1.insert(0, x)
+
+            this.scrollbar = tk.Scrollbar(win1)
+            this.scrollbar.pack(side = tk.RIGHT, fill = tk.BOTH)
+            this.lb1.config(yscrollcommand = this.scrollbar.set)  
+            this.scrollbar.config(command = this.lb1.yview) 
 
 
 
@@ -115,8 +120,19 @@ def plugin_app(parent):
     this.win1 = tk.Toplevel()
     this.win1.title('BananaLog Log')
 
-    this.lb1 = tk.Listbox(win1, height = 60, width = 40)
-    this.lb1.pack()
+    this.lb1 = tk.Listbox(win1, height = 40, width = 50)
+    this.lb1.pack(side = tk.LEFT, fill = tk.BOTH)
+    '''
+    for values in range(100): 
+        this.lb1.insert(0, values)
+        this.lb1.pack()
+        this.windowlog.append(values) 
+    '''
+    this.scrollbar = tk.Scrollbar(win1)
+    this.scrollbar.pack(side = tk.RIGHT, fill = tk.BOTH)
+    this.lb1.config(yscrollcommand = this.scrollbar.set)  
+    this.scrollbar.config(command = this.lb1.yview) 
+
     this.win1.withdraw()
     '''
     for x in range(40):
@@ -137,9 +153,17 @@ def journal_entry(cmdr, is_beta, system, station, entry, state):
         this.systemnamestring = system
         this.currsysbutton["text"] = system
         logger.info('lastsystemstring: ' + this.lastsystemstring) 
+
+        updatelogwin('Scans for System: ' + this.systemcodexscans.starsystem)
+        nspsites = this.systemcodexscans.getsystemlogwinstring()
+        for x in nspsites:
+            updatelogwin(x)
+        updatelogwin('END Scans for System'
+
         del this.systemcodexscans
         this.systemcodexscans = CodexScans()
         this.systemcodexscans.addsystem(system)
+        
         updatelogwin('FSD Jump to: ' + entry['StarSystem'])
     elif entry['event'] == 'FSSDiscoveryScan':
         # The CMDR has honked, lets update the system

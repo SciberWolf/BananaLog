@@ -55,7 +55,7 @@ class CodexScans():
         self.finalstring = self.makestring()
         return self.finalstring
 
-    def makesitestring(self, s):
+    def makesitestring(self, s, formattype):
         molluscspecies = '' # bullet etc
         mollusctype = ''
         cloudstorm = ''  #storm or not
@@ -85,31 +85,55 @@ class CodexScans():
             # quick cheat to ensure 4 crystal entries if none scanned
              crystals.append('')
 
-        entryString = '{molluscspecies}{t}{mollusctype}{t}{cloudtype}{cloudstorm}{t}{c1a}{t}{c1b}{t}{c2a}{t}{c2b}{t}{other}'.format(
-            t = '\t',
-            molluscspecies = molluscspecies,
-            mollusctype = mollusctype,
-            cloudtype = cloudtype,
-            cloudstorm = cloudstorm,
-            c1a = crystals[0],
-            c1b = crystals[1],
-            c2a = crystals[2],
-            c2b = crystals[3],
-            other = ", ".join(other)
-        )
+        if formattype == 0: # string formated for sheet
+            entryString = '{molluscspecies}{t}{mollusctype}{t}{cloudtype}{cloudstorm}{t}{c1a}{t}{c1b}{t}{c2a}{t}{c2b}{t}{other}'.format(
+                t = '\t',
+                molluscspecies = molluscspecies,
+                mollusctype = mollusctype,
+                cloudtype = cloudtype,
+                cloudstorm = cloudstorm,
+                c1a = crystals[0],
+                c1b = crystals[1],
+                c2a = crystals[2],
+                c2b = crystals[3],
+                other = ", ".join(other)
+            )
+
+        elif formattype == 1: # String formated for Logwindow
+            entryString = '{mollusc}{s}{clouds}{s}{crystals1}{s}{crystals2}{s}{other}'.format(
+                s = ' ',
+                mollusc = molluscspecies + "-" + mollusctype,
+                clouds = cloudtype + "-" + cloudstorm,
+                crystals1 = crystals[0] + "-" + crystals[1],
+                crystals2 = crystals[2] + "-" + crystals[3],
+                other = ", ".join(other)
+            )
         return entryString
 
+
+    def getsystemlogwinstring():
+        # TODO update makesitestring() to make it more compatible with this function
+        nspsite1 = self.makesitestring(self.nspscans1, 1).split()
+        nspsite2 = self.makesitestring(self.nspscans2, 1).split()
+        nspsite3 = self.makesitestring(self.nspscans3, 1).split()
+        nspsites = []
+        nspsites = nspsite1 + nspsite2 + nspsite3
+ 
+        return nspsites
+
+
+
     def makestring(self):
-        nspsite1 = self.makesitestring(self.nspscans1)
-        nspsite2 = self.makesitestring(self.nspscans2)
-        nspsite3 = self.makesitestring(self.nspscans3)
+        nspsite1 = self.makesitestring(self.nspscans1, 0)
+        nspsite2 = self.makesitestring(self.nspscans2, 0)
+        nspsite3 = self.makesitestring(self.nspscans3, 0)
         returnstring = ''
    
         LocalTime = datetime.datetime.now()
         UTCTime = self.Local2UTC(LocalTime)
 
         # TODO add correct Timestamp
-        returnstring = '{timestamp}{t}{cmdr}{t}{sector}{t}{system}{t}{nspnum}{t}{yes}{t}{blank}{t}{blank}{t}{nsp1}{t}{yes}{t}{blank}{t}{blank}{t}{nsp2}{t}{yes}{t}{blank}{t}{blank}{t}{nsp3}{t}{dot}'.format(
+        returnstring = '{timestamp}{t}{cmdr}{t}{sector}{t}{system}{t}{nspnum}{t}{yes}{t}{nsp1}{t}{yes}{t}{nsp2}{t}{yes}{t}{nsp3}{t}{dot}'.format(
             t = '\t',
             yes = 'Yes',
             blank = '',
