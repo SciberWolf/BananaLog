@@ -158,8 +158,7 @@ def journal_entry(cmdr, is_beta, system, station, entry, state):
         nspsites = this.systemcodexscans.getsystemlogwinstring()
         for x in nspsites:
             updatelogwin(x)
-        updatelogwin('END Scans for System'
-
+        updatelogwin('END Scans for System')
         del this.systemcodexscans
         this.systemcodexscans = CodexScans()
         this.systemcodexscans.addsystem(system)
