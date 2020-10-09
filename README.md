@@ -24,6 +24,8 @@ The best procedure to follow for accurate results are:
 
 Due to the change in the expedition requirment to use the form for entries, use the details in the log to fill out the form.
 
+6. Add any missing info into the form (lagrange clouds for example cant be scanned).
+
 Currently the systems NSP details are still placed on the computers clipboard in the same format as the edpedition spreadsheet if you wish to maintain a backup record of your discoveries.
 
 ## Buttons:
